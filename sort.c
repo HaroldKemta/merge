@@ -24,13 +24,13 @@ void mergeSort (int array, int low , int high ) {
 
         int mid_Point = low + (high - low) / 2 ;
 
-        // recursively divide the array down to one element on each side 
+                // recursively divide the array down to one element on each side 
 
         mergeSort(array , low , mid_Point) ;
 
         mergeSort(array, mid_Point +1 , high) ;
 
-        //combine the two indivisual arrays 
+                //combine the two indivisual arrays 
 
         combine(array, low, mid_Point, high ) ;
     }
@@ -39,5 +39,37 @@ void mergeSort (int array, int low , int high ) {
 
 
 void combine(int array, int low, int mid_Point, int high ) {
-    
+
+
+            // create temparaty variables to hold the values that would be merged
+
+    int leftArray_Size, rightArray_Size ;
+
+    int temp_L_array , temp_R_array ;
+
+            // copy data from og array into the temporary arrays 
+
+            // we are fisrt going to use a conditional too check if we are in bounds of array size 
+
+    for (int i = 0 ; i < leftArray_Size ; i++ ) {
+
+        temp_L_array[i] = array[low + 1] ;
+    }
+
+    for(int j = 0 ; j < rightArray_Size ; j++) {
+
+        temp_R_array[i] = array[mid_Point + 1 + j] ;
+    }
+
+
+            // now we have to check which is smaller and put it back in the og array 
+
+                // but first lets set the indexes to 0 , and 
+
+                    // make a variable called bottom to keep track of where we are in the array 
+
+                            // uodating it by one once data is coppied 
+
+            if ( temp_L_array[i])
+
 }
