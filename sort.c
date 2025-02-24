@@ -38,6 +38,7 @@ void mergeSort (int array, int low , int high ) {
 
 
 
+
 void combine(int array, int low, int mid_Point, int high ) {
 
 
@@ -64,12 +65,40 @@ void combine(int array, int low, int mid_Point, int high ) {
 
             // now we have to check which is smaller and put it back in the og array 
 
-                // but first lets set the indexes to 0 , and 
+                // but first lets set the local indexes to 0 , and 
 
                     // make a variable called bottom to keep track of where we are in the array 
 
                             // uodating it by one once data is coppied 
 
-            if ( temp_L_array[i])
 
-}
+                            // we are going to use a while loop to make ssure our indexes are within bound
+
+        int i = 0 ;
+
+        int j = 0 ;
+
+        int bottom = low ;
+
+
+        while (i < leftArray_Size && j < rightArray_Size ) {
+
+            if (temp_L_array[i] <= temp_R_array[j]) {
+
+                array[bottom] = temp_L_array[i] ;
+
+                i++ ;
+
+            } else {
+
+                array[bottom] = temp_R_array[j] ;
+            }
+
+            bottom++ ;
+
+
+        }
+
+ }
+
+     
