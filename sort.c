@@ -99,6 +99,34 @@ void combine(int array, int low, int mid_Point, int high ) {
 
         }
 
+
+                // copy remaining elements 
+                // 2 seperate while loops for both 
+                // we know the array on the left is smaller so lets start there 
+
+        
+        while (i < leftArray_Size) {
+
+            array[bottom] = temp_L_array[i] ;
+
+            i++ ;
+
+            bottom++ ;
+        }   
+
+        
+        while (j < rightArray_Size) {
+
+            array[bottom] = temp_L_array[j] ;
+
+            j++ ;
+
+            bottom++ ;
+        }   
+
+        
+        
+
  }
 
      
