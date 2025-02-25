@@ -8,7 +8,7 @@ void  printArray(int numbers [], int size) ;
 
         int main () {
 
-            int numbers [] = {12, 12, 3, 15, 75, 2, 86, 6, } ;
+            int numbers [] = {12, 12, 3, 15, 75, 2, 86, 6,} ;
 
             int size = sizeof(numbers) / sizeof(numbers[0]) ; 
 
@@ -102,6 +102,8 @@ void  printArray(int numbers [], int size) ;
                     } else {
 
                         array[bottom] = temp_R_array[j] ;
+
+                        j++ ;
                     }
 
                     bottom++ ;
@@ -146,6 +148,7 @@ void  printArray(int numbers [], int size) ;
 
                 printf("%4d", numbers[i]) ;
             }
+            printf("\n");
         }
 
             
