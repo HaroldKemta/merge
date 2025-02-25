@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-void mergeSort (int array, int low , int high ) ;
+void mergeSort (int array[], int low , int high ) ;
 
-void combine(int array, int low, int mid_Point, int high ) ;
+void combine(int array[], int low, int mid_Point, int high ) ;
 
 int main () {
 
@@ -10,11 +10,11 @@ int main () {
 
     int size = sizeof(numbers) / sizeof(numbers[0]) ; 
 
-    mergeSort ( numbers, 0 , size - 1) ;
+    mergeSort(numbers, 0 , size - 1) ;
 }
 
 
-void mergeSort (int array, int low , int high ) {
+void mergeSort (int array[], int low , int high ) {
 
     // check the base condition 
 
@@ -39,14 +39,20 @@ void mergeSort (int array, int low , int high ) {
 
 
 
-void combine(int array, int low, int mid_Point, int high ) {
+void combine(int array [], int low, int mid_Point, int high ) {
 
 
             // create temparaty variables to hold the values that would be merged
 
-    int leftArray_Size, rightArray_Size ;
+    int leftArray_Size = mid_Point - low + 1 ; 
+    
+    int rightArray_Size  = high - mid_Point  ;
 
-    int temp_L_array , temp_R_array ;
+    int temp_L_array[leftArray_Size] ;
+    
+    int temp_R_array[rightArray_Size] ; 
+
+                // dont forget to set array sizes 
 
             // copy data from og array into the temporary arrays 
 
@@ -54,12 +60,12 @@ void combine(int array, int low, int mid_Point, int high ) {
 
     for (int i = 0 ; i < leftArray_Size ; i++ ) {
 
-        temp_L_array[i] = array[low + 1] ;
+        temp_L_array[i] = array[low + i] ;
     }
 
     for(int j = 0 ; j < rightArray_Size ; j++) {
 
-        temp_R_array[i] = array[mid_Point + 1 + j] ;
+        temp_R_array[j] = array[mid_Point + 1 + j] ;
     }
 
 
@@ -117,7 +123,7 @@ void combine(int array, int low, int mid_Point, int high ) {
         
         while (j < rightArray_Size) {
 
-            array[bottom] = temp_L_array[j] ;
+            array[bottom] = temp_R_array[j] ;
 
             j++ ;
 
